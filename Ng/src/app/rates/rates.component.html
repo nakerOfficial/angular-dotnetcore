@@ -1,0 +1,10 @@
+<p>rates works!</p>
+
+<select (change)="setRateCurrent($event.target.value)">
+    <option value="null" disabled>Select Rate</option>
+    <option *ngFor="let rate of rates" [value]="rate.name">{{ rate.name }}</option>
+</select>
+
+<div *ngIf="rateCurrent">
+    Result: 1 {{ rateCurrent.name }} = {{ rateCurrent.value }} RON
+</div>
